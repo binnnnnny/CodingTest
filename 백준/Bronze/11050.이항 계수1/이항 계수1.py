@@ -1,0 +1,19 @@
+N,K = map(int,input().split())
+result1 = 1
+for i in range(K) :
+    result1 *= N
+    N -= 1
+
+divisor = 1
+for j in range(2, K+1) :
+    divisor *= j
+
+print(result1 // divisor)
+
+# 재귀함수 사용
+def factorial(n) :
+    if n==0 or n==1 :
+        return 1
+    else :
+        return n * factorial(n-1)
+print(factorial(N) // (factorial(N-K) * factorial(K)))
